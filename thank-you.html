@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Activated | FlowBridge Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Calendly Widget Assets -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <style>
+        body { 
+            background: var(--bg-white); 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: space-between; 
+            min-height: 100vh; 
+            color: var(--text-dark); 
+            text-align: center; 
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .system-seal {
+            max-width: 650px;
+            width: 100%;
+            padding: 120px 24px 60px 24px; /* Balanced top padding for fixed header */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--cta-green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+            align-self: center;
+        }
+        .lifecycle-track {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .lifecycle-track::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+        .step { position: relative; z-index: 1; }
+        .step-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-muted);
+            transition: all 0.5s ease;
+        }
+        .step.active .step-dot {
+            border-color: var(--cta-green);
+            color: var(--cta-green);
+            background: rgba(34, 197, 94, 0.05);
+        }
+        .step.analyzing .step-dot {
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+            background: rgba(59, 130, 246, 0.05);
+            animation: pulseBlueHUD 2s infinite ease-in-out;
+        }
+        .step.pending .step-dot {
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+            animation: glowPulse 2.5s infinite alternate;
+        }
+        .step-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+        
+        @keyframes pulseBlueHUD {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        @keyframes glowPulse {
+            0% { filter: drop-shadow(0 0 2px var(--secondary-blue)); transform: scale(1); }
+            100% { filter: drop-shadow(0 0 8px var(--secondary-blue)); transform: scale(1.05); }
+        }
+
+        .calendly-trigger-btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 22px 54px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 19px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(11, 61, 145, 0.15);
+            transition: all 0.3s var(--cubic-bounce);
+            cursor: pointer;
+            border: none;
+        }
+        .calendly-trigger-btn:hover {
+            transform: translateY(-4px);
+            background: var(--primary-dark);
+            box-shadow: 0 15px 40px rgba(11, 61, 145, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Secondary Exit CTA with Hover Effect */
+        .secondary-exit {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            padding: 4px 8px;
+            border-bottom: 1px solid transparent;
+        }
+        .secondary-exit:hover { 
+            color: var(--primary-blue); 
+            border-bottom-color: var(--primary-blue);
+            transform: translateY(-1px);
+        }
+
+        .simple-footer {
+            width: 100%;
+            padding: 32px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Header (Elite Hub Bar) - Cloned from Landing Page -->
+    <header class="site-header scrolled" id="main-header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-light);">
+        <div class="container header-container">
+            <a href="index.html" class="header-brand">
+                <img src="assets/logo.png" class="brand-logo" alt="FB Logo">
+                <div style="display: flex; flex-direction: column;">
+                    <span class="brand-name">FlowBridge Systems</span>
+                    <div style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--cta-green); margin-top: -4px; letter-spacing: 0.5px;">
+                        <span class="pulse-dot" style="width: 6px; height: 6px; background: var(--cta-green);"></span> SYSTEM ACTIVE / 99.9% UPTIME
+                    </div>
+                </div>
+            </a>
+            
+            <nav class="header-nav" style="display: flex;">
+                <a href="index.html#problem" class="nav-link">The Problem</a>
+                <a href="index.html#solution" class="nav-link">System View</a>
+                <a href="index.html#workflow" class="nav-link">How It Works</a>
+                <a href="index.html#results" class="nav-link">Outcomes</a>
+                <a href="index.html#demo-form" class="nav-link">Live Demo</a>
+            </nav>
+            
+            <div class="header-action">
+                <a href="index.html#demo-form" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px; border-radius: 6px;">Book Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="system-seal fade-in visible">
+        <div class="status-badge">
+            <span class="pulse-dot" style="background: var(--cta-green); width: 8px; height: 8px;"></span> 
+            SYSTEM_INTAKE_CONFIRMED // DEPLOYMENT_SLOT_RESERVED
+        </div>
+
+        <h1 style="font-size: 48px; margin-bottom: 24px; color: var(--text-dark); line-height: 1.1;">Step 1 Complete –<br>Secure Your System Walkthrough</h1>
+        
+        <p id="dynamicSub" style="font-size: 18px; color: var(--text-light); margin-bottom: 48px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            Your request has been received. Book your session to map your system.
+        </p>
+
+        <div class="lifecycle-track">
+            <div class="step active">
+                <div class="step-dot">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="step-label">Intake Captured</div>
+            </div>
+            <div class="step analyzing">
+                <div class="step-dot">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 3s linear infinite;"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 6V12L16 14"></path></svg>
+                </div>
+                <div class="step-label">Qualification Processing</div>
+            </div>
+            <div class="step pending">
+                <div class="step-dot">3</div>
+                <div class="step-label">Deployment Confirmation</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <a href="" 
+               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/nitinmishraops/30min'});return false;"
+               class="calendly-trigger-btn">
+               Confirm Your Deployment Call Now →
+            </a>
+            
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-dark); font-weight: 500; opacity: 0.8;">
+                Select a time to complete your booking and review your current process.
+            </p>
+
+            <a href="index.html" class="secondary-exit">I’ll do this later</a>
+
+            <p style="margin-top: 24px; font-size: 13px; color: var(--text-muted); font-family: monospace; font-weight: 600;">
+                Booking your call ensures your system setup is not delayed.
+            </p>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        &copy; 2026 FlowBridge Systems. All rights reserved.
+    </footer>
+
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+
+    <script>
+        const sub = document.getElementById('dynamicSub');
+        const messages = [
+            "Routing to qualification engine...",
+            "Analyzing clinic infrastructure...",
+            "Preparing system handshake node...",
+            "Securing deployment slot..."
+        ];
+        let i = 0;
+        setInterval(() => {
+            const oldStatus = sub.querySelector('.dynamic-status');
+            if (oldStatus) oldStatus.remove();
+            
+            const statusLine = document.createElement('div');
+            statusLine.style.fontSize = '12px';
+            statusLine.style.color = 'var(--secondary-blue)';
+            statusLine.style.fontWeight = '700';
+            statusLine.style.marginTop = '12px';
+            statusLine.style.fontFamily = 'monospace';
+            statusLine.innerText = `STATUS: ${messages[i]}`;
+            statusLine.className = 'dynamic-status fade-in visible';
+            sub.appendChild(statusLine);
+            i = (i + 1) % messages.length;
+        }, 3500);
+    </script>
+
+</body>
+</html>
