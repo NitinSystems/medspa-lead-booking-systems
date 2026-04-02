@@ -155,6 +155,7 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 .container { max-width: 1150px; margin: 0 auto; }
 .container-narrow { max-width: 800px; margin: 0 auto; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sys-grid-responsive { display: grid; grid-template-columns: 1fr 220px; transition: all 0.3s ease; }
 
 /* 1. Hero Updates */
 /* Grids */
@@ -313,15 +314,17 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 .footer-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; }
 
 @media (max-width: 900px) {
+    .section { overflow-x: hidden; width: 100%; }
     .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-    h1 { font-size: 36px; }
+    h1 { font-size: 32px; }
+    .brand-name { font-size: 14px; white-space: nowrap; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
+    .header-brand { gap: 8px; }
+    .header-action { transform: scale(0.9); transform-origin: right; }
+    .sys-grid-responsive { grid-template-columns: 1fr; }
     .how-it-works-grid { grid-template-columns: 1fr; }
     .visual-viewport { height: 350px; }
-    .realistic-board { grid-template-columns: 1fr; }
+    .realistic-board { grid-template-columns: 1fr; width: 100%; max-width: 100%; }
     .footer-bar { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-    .outcome-stage { height: 400px; }
-    .outcome-badge.b-left { left: 0; }
-    .outcome-badge.b-right { right: 0; }
 }
 
 /* Modal System Styles */
