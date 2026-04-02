@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Works with Hubspot, Make.com, GoHighLevel, Zapier, etc.
     const WEBHOOK_URL = 'PASTE_YOUR_WEBHOOK_URL_HERE'; 
 
-    console.log("FlowBridge Systems: System Logic Online.");
+    console.log("Med Spa Lead-to-Booking System: System Logic Online.");
 
     // --- GLOBAL UTILITIES ---
     const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
@@ -297,5 +297,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalForm) modalForm.addEventListener('submit', handleSystemSubmission);
     if (staticForm) staticForm.addEventListener('submit', handleSystemSubmission);
 
-    console.log("FlowBridge Systems: All Intake Protocols Synced.");
+    console.log("Med Spa Lead-to-Booking System: All Intake Protocols Synced.");
 });
