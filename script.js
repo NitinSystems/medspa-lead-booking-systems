@@ -25,6 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
         else header?.classList.remove('scrolled');
     });
 
+    // --- MOBILE MENU TOGGLE ---
+    const mainHeader = document.getElementById('main-header');
+    const mobileToggle = document.getElementById('mobileNavToggle');
+    const navLinks = document.querySelectorAll('.header-nav .nav-link');
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            mainHeader.classList.toggle('menu-open');
+            document.body.classList.toggle('modal-open');
+            
+            // Toggle Icon (Hamburger to X)
+            const isOpen = mainHeader.classList.contains('menu-open');
+            mobileToggle.innerHTML = isOpen 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mainHeader.classList.remove('menu-open');
+            document.body.classList.remove('modal-open');
+            // Reset to Hamburger
+            if (mobileToggle) {
+                mobileToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            }
+        });
+    });
+
     // --- 1. HERO COMMAND CENTER (MULTI-LEAD SIMULATION) ---
     const heroLeads = [
         { row: 'heroRow1', status: 'heroStatus1', name: 'Sarah Jenkins' },
@@ -132,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             autoWorkflowLoop();
             workflowTimer = setInterval(autoWorkflowLoop, 3500);
         }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
     
     if (document.getElementById('workflow')) workflowObserver.observe(document.getElementById('workflow'));
 
@@ -185,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entries[0].isIntersecting && !pipelineTimer) {
             pipelineTimer = setInterval(movePipelineCard, 5000);
         }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
     
     if (document.getElementById('crmBoard')) pipelineObserver.observe(document.getElementById('crmBoard'));
 
