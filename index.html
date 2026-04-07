@@ -19,13 +19,18 @@
         <div class="container header-container">
             <a href="#top" class="header-brand">
                 <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo">
-                <div style="display: flex; flex-direction: column;">
-                    <span class="brand-name">Med Spa Lead-to-Booking System</span>
-                    <div style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--cta-green); margin-top: -4px; letter-spacing: 0.5px;">
+                <div style="display:flex; flex-direction:column; min-width:160px; flex-shrink:1;">
+                    <span class="nav-brand-text" style="color: #0b3d91 !important; display: block !important; font-weight: 800; font-size: 13px; line-height: 1.2; visibility: visible !important;">Med Spa Lead-to-Booking System</span>
+                    <div style="display: flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 700; color: #22c55e; margin-top: 2px;">
                         <span class="pulse-dot" style="width: 6px; height: 6px; background: var(--cta-green);"></span> SYSTEM ACTIVE / 99.9% UPTIME
                     </div>
                 </div>
             </a>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Mobile Navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
             
             <nav class="header-nav">
                 <a href="#problem" class="nav-link">The Problem</a>
@@ -138,8 +143,8 @@
 
     <!-- SECTION 2 - THE PROBLEM (FAILURE DASHBOARD) -->
     <section class="section bg-light-gray" id="problem" style="border-top: 1px solid var(--border-color); padding: 60px 0;">
-        <div class="container fade-in">
-            <div class="text-center container-narrow">
+        <div class="container fade-in text-center-mobile">
+            <div class="text-center-mobile container-narrow">
                 <div style="color: #DC2626; font-size: 11px; font-weight: 800; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase;">THE HIDDEN COST OF SLOW FOLLOW-UP</div>
                 <h2 style="font-size: 32px; margin-bottom: 18px;">Your Leads Are Ready to Book. Your System Is Not.</h2>
                 <p style="font-size: 16px; margin-bottom: 12px; color: var(--text-dark); font-weight: 500;">Patients are reaching out with intent, but delayed responses and manual handling are costing you bookings every day.</p>
@@ -153,7 +158,7 @@
                     <span style="font-size: 10px; color: #991B1B; margin-left: auto; font-weight: 700;">LIVE_INCIDENT_REPORT</span>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 260px; min-height: 300px;">
+                <div class="grid-res-leak" style="min-height: 300px;">
                     <!-- Left: Leaking Pipeline -->
                     <div style="padding: 20px; border-right: 1px solid #FECACA;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -212,7 +217,7 @@
             </div>
 
             <!-- Operational Toll Indicators -->
-            <div class="row mt-4" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px;">
+            <div class="grid-res-3 mt-4" style="margin-top: 32px;">
                 <div style="border-left: 2px solid #FECACA; padding-left: 16px;">
                     <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Staff Burnout</div>
                     <p style="font-size: 13px; color: #7F1D1D; margin: 0;">18% typical churn rate due to manual task exhaustion.</p>
@@ -237,7 +242,7 @@
                 <p style="color: rgba(255,255,255,0.7); font-weight: 600;">Speed is no longer an advantage. It is the baseline.</p>
             </div>
             
-            <div class="comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div class="comparison-grid grid-res-2">
                 <div class="sys-ui-window" style="padding: 32px; opacity: 0.6; border-color: rgba(255,255,255,0.1);">
                     <div class="corner-tl"></div><div class="corner-tr"></div>
                     <div style="font-weight: 800; font-size: 14px; color: #EF4444; margin-bottom: 24px; text-transform: uppercase;">Manual Agency / In-House</div>
@@ -429,13 +434,13 @@
 
     <!-- SECTION 5 - SYSTEM OUTCOMES (PERFORMANCE SUITE) -->
     <section class="section bg-light-gray" id="results" style="padding-top: 100px;">
-        <div class="container fade-in">
-            <div class="text-center container-narrow" style="margin-bottom: 48px;">
+        <div class="container fade-in text-center-mobile">
+            <div class="text-center-mobile container-narrow" style="margin-bottom: 48px;">
                 <h2 style="font-size: 38px; margin-bottom: 18px;">Measured Business Outcomes Not Just Features</h2>
                 <p style="font-size: 16px; color: var(--text-light); font-weight: 500;">When response speed and follow-up are automated, your entire pipeline performs more efficiently and predictably.</p>
             </div>
             
-            <div class="outcomes-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px;">
+            <div class="outcomes-grid grid-res-4" style="margin-top: 60px;">
                 
                 <!-- Card 1 -->
                 <div class="outcome-card shadow-soft" id="out-card-1" style="background: white; border-radius: 20px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.5s var(--cubic-bounce);">
@@ -546,7 +551,7 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1;">
+                <div class="grid-res-3" style="flex: 1;">
                     <!-- Column 1 -->
                     <div class="pipeline-column" id="col-new">
                         <div style="font-size: 11px; font-weight: 800; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 16px;">New Opportunities</div>
@@ -667,7 +672,7 @@
                 <!-- Brand Status -->
                 <div>
                     <div style="display:flex; align-items:center; gap:12px; margin-bottom: 20px;">
-                        <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo" style="filter: brightness(0) invert(1);">
+                        <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo">
                         <span class="brand-name">Med Spa Lead-to-Booking System</span>
                     </div>
                     <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 100px; padding: 6px 16px; display: inline-flex; align-items:center; gap:8px; font-size: 12px; color: var(--cta-green);">
@@ -678,11 +683,11 @@
                 <!-- Regional Infrastructure -->
                 <div>
                     <div style="font-size: 14px; font-weight: 800; color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Infrastructure Status</div>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.4); display:flex; align-items:center; gap:6px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> US-AST: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.4); display:flex; align-items:center; gap:6px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> UK-SOUTH: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.4); display:flex; align-items:center; gap:6px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> EU-CEN: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.4); display:flex; align-items:center; gap:6px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--secondary-blue);"></span> API: STABLE</div>
+                    <div class="grid-res-2" style="gap: 12px; max-width: 300px; margin: 0 auto;">
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> US-AST: UP</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> UK-SOUTH: UP</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> EU-CEN: UP</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--secondary-blue);"></span> API: STABLE</div>
                     </div>
                 </div>
 
