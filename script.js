@@ -1,3 +1,12 @@
+(function() {
+    // Check for saved theme preference immediately to prevent flash
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.body.classList.add('dark-theme');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURE YOUR WEBHOOK HERE ---
     // Works with Hubspot, Make.com, GoHighLevel, Zapier, etc.
@@ -28,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- MOBILE MENU TOGGLE ---
     const mainHeader = document.getElementById('main-header');
     const mobileToggle = document.getElementById('mobileNavToggle');
-    const navLinks = document.querySelectorAll('.header-nav .nav-link');
+    const navLinks = document.querySelectorAll('.header-nav .nav-link, .header-nav .btn-nav-mobile');
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
@@ -325,6 +334,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalForm) modalForm.addEventListener('submit', handleSystemSubmission);
     if (staticForm) staticForm.addEventListener('submit', handleSystemSubmission);
+
+    // --- 7. THEME TOGGLE ENGINE (DARK/LIGHT) ---
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Subtle transition effect
+            themeToggle.style.transform = 'scale(1.2)';
+            setTimeout(() => themeToggle.style.transform = 'scale(1)', 200);
+        });
+    }
 
     console.log("Med Spa Lead-to-Booking System: All Intake Protocols Synced.");
 });
