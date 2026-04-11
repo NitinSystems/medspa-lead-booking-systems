@@ -23,6 +23,27 @@
     --cubic-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+/* 0. DARK THEME DEFINITION (Midnight Slate) */
+body.dark-theme {
+    --bg-white: #020617;
+    --bg-light-gray: #0B1120;
+    --bg-soft-blue: #0F172A;
+    --bg-dark: #010413;
+    --bg-superdark: #00020a;
+    --text-dark: #F8FAFC;
+    --text-light: #94A3B8;
+    --text-muted: #64748B;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.05);
+    --sys-dark-bg: #010413;
+    --primary-blue: #3B82F6;
+    --primary-dark: #1D4ED8;
+}
+
+body {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
 html { scroll-behavior: smooth; }
 body { color: var(--text-dark); line-height: 1.6; font-size: 17px; background-color: var(--bg-white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -142,15 +163,18 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 /* Header */
 .site-header { padding: 16px 24px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all 0.3s ease; background: transparent; }
 .site-header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-light); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-bottom: 1px solid rgba(255,255,255,0.05); }
 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1150px; margin: 0 auto; }
 .header-brand { display: flex; align-items: center; gap: 12px; }
 .brand-logo { width: 38px; height: 38px; border-radius: 8px; box-shadow: 0 4px 10px rgba(11, 61, 145, 0.2); }
 .brand-name { font-weight: 700; font-size: 20px; color: var(--primary-dark); letter-spacing: -0.5px; }
+.nav-brand-text { color: var(--primary-blue); transition: color 0.4s ease; }
 .header-nav { display: none; gap: 32px; }
 .nav-link { font-size: 15px; font-weight: 600; color: #475569; transition: all 0.2s; position: relative; padding-bottom: 4px; }
 .nav-link:hover, .nav-link.active { color: var(--primary-blue); }
 .nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--primary-blue); transition: width 0.3s; }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.btn-nav-mobile { display: none !important; } /* Hidden on desktop */
 @media (min-width: 900px) { .header-nav { display: flex; } }
 
 /* Mobile Menu Toggle Styles */
@@ -206,6 +230,17 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
     }
     
     .header-nav .nav-link:hover, .header-nav .nav-link.active { color: var(--primary-dark) !important; opacity: 1; }
+    
+    .btn-nav-mobile { 
+        display: block !important; 
+        margin-top: 20px; 
+        width: 100%; 
+        max-width: 280px;
+        padding: 16px 24px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 20px rgba(11, 61, 145, 0.2) !important;
+    }
 }
 
 /* Base Layout */
@@ -402,11 +437,14 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
     }
     .nav-brand-text { font-size: 11px !important; max-width: 150px; }
     .site-header .header-container { gap: 10px; }
-    .site-header .nav-brand-text, #main-header .nav-brand-text { color: #0b3d91 !important; visibility: visible !important; opacity: 1 !important; }
+    .site-header .nav-brand-text, #main-header .nav-brand-text { visibility: visible !important; opacity: 1 !important; }
     .site-footer .brand-name { color: #ffffff !important; max-width: none; }
-    .header-brand { gap: 8px; flex: 1; align-items: center; }
-    .header-action { display: none; } /* Hide Book Demo button in header on mobile to save space */
+    .header-brand { gap: 8px; flex: 1; align-items: center; overflow: hidden; }
+    .header-action { display: flex !important; align-items: center; margin-left: auto; }
+    .header-action .btn-desktop-demo { display: none; }
     .header-action .btn { padding: 8px 16px; font-size: 12px; }
+    .theme-toggle { margin-right: 8px !important; width: 36px; height: 36px; }
+    .mobile-nav-toggle { order: 3; margin-left: 4px; }
 
     /* Mobile Navigation Overlay */
     .mobile-nav-toggle { display: block; }
@@ -584,4 +622,152 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 .modal-content input:focus, .modal-content textarea:focus { 
     background: rgba(255,255,255,0.05); 
     border-color: var(--secondary-blue); 
+}
+
+/* Zapier Chatbot Protocol Polish */
+zapier-interfaces-chatbot-embed {
+    z-index: 9998 !important; /* Just below main modals */
+}
+
+@media (max-width: 900px) {
+    zapier-interfaces-chatbot-embed {
+        bottom: 20px !important;
+        right: 15px !important;
+        transform: scale(0.9);
+        transform-origin: bottom right;
+    }
+}
+
+/* Theme Toggle Component */
+.theme-toggle {
+    background: rgba(11, 61, 145, 0.05);
+    border: 1px solid rgba(11, 61, 145, 0.1);
+    color: var(--primary-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s var(--cubic-smooth);
+    margin-right: 16px;
+}
+body.dark-theme .theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #FACC15;
+}
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    background: rgba(11, 61, 145, 0.1);
+}
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+body.dark-theme .theme-toggle .icon-sun { display: block; }
+body.dark-theme .theme-toggle .icon-moon { display: none; }
+
+/* Dark Mode Overrides for Specific Components */
+body.dark-theme .sys-ui-window {
+    background: #00020a;
+}
+body.dark-theme .bg-soft-blue {
+    background: #0F172A;
+}
+body.dark-theme .site-footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+body.dark-theme .brand-name {
+    color: white !important;
+}
+body.dark-theme .nav-brand-text {
+    color: #3C82F6 !important;
+}
+body.dark-theme .nav-link {
+    color: rgba(255,255,255,0.7);
+}
+body.dark-theme .nav-link:hover {
+    color: white;
+}
+body.dark-theme .form-right {
+    background: #0B1120;
+}
+body.dark-theme .structured-form input, 
+body.dark-theme .structured-form textarea {
+    background: rgba(2, 6, 23, 0.5);
+    border-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* Explicit Utility Overrides for Dark Mode */
+body.dark-theme .bg-white,
+body.dark-theme .bg-light-gray,
+body.dark-theme section.bg-white,
+body.dark-theme section.bg-light-gray {
+    background-color: #020617 !important;
+}
+
+body.dark-theme .bg-soft-blue {
+    background-color: #0F172A !important;
+}
+
+/* Modal and Element Specifics */
+body.dark-theme .dashboard-mockup,
+body.dark-theme .stat-box,
+body.dark-theme .table-row {
+    background: #0B1120;
+    border-color: rgba(255,255,255,0.05);
+}
+
+body.dark-theme .step-item.active {
+    background: #0F172A;
+    border-color: rgba(255,255,255,0.1);
+}
+
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme .strong {
+    color: #F8FAFC;
+}
+
+body.dark-theme p {
+    color: #94A3B8;
+}
+
+/* Specific Blue Overrides for "Manual Follow-Up" Section */
+body.dark-theme .bg-superdark h2,
+body.dark-theme .bg-superdark p {
+    color: #3C82F6 !important;
+}
+
+/* Logic for sections that were ALREADY dark in light mode */
+body.dark-theme .bg-superdark {
+    background-color: #0F172A !important; /* Slightly lighter slate to differentiate */
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Contrast fixes for red status indicators and lines */
+body.dark-theme [style*="color: #991B1B"],
+body.dark-theme [style*="color: #7F1D1D"] {
+    color: #FCA5A5 !important; /* Brighter red/salmon for readability */
+}
+
+body.dark-theme [style*="background: #FEE2E2"] {
+    background: rgba(239, 68, 68, 0.2) !important;
+}
+
+body.dark-theme [style*="border-left: 2px solid #FECACA"],
+body.dark-theme [style*="border: 1px solid #FECACA"],
+body.dark-theme [style*="border: 1px dashed #FECACA"] {
+    border-color: rgba(248, 113, 113, 0.4) !important;
+}
+
+/* Fix for overlapping elements on mobile */
+@media (max-width: 900px) {
+    .site-header .header-container {
+        justify-content: flex-end;
+        gap: 0;
+    }
+    .header-brand {
+        margin-right: auto;
+    }
 }
