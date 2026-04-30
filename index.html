@@ -5,12 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Med Spa Lead-to-Booking System</title>
+    <meta name="description" content="Turn every Med Spa inquiry into a confirmed appointment within minutes. Fully automated, instant follow-up system.">
+    
+    <!-- Open Graph (OG) Tags -->
+    <meta property="og:title" content="Med Spa Lead-to-Booking System">
+    <meta property="og:description" content="Turn every Med Spa inquiry into a confirmed appointment within minutes. Fully automated, instant follow-up system.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Med Spa Lead-to-Booking System",
+      "operatingSystem": "Web",
+      "applicationCategory": "BusinessApplication",
+      "description": "Automated system that captures, qualifies, and guides Med Spa leads to booking instantly."
+    }
+    </script>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+
 </head>
 
 <body id="top">
@@ -19,9 +38,9 @@
     <header class="site-header" id="main-header">
         <div class="container header-container">
             <a href="#top" class="header-brand">
-                <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo">
+                <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo" loading="lazy">
                 <div style="display:flex; flex-direction:column; min-width:160px; flex-shrink:1;">
-                    <span class="nav-brand-text" style="display: block !important; font-weight: 800; font-size: 13px; line-height: 1.2; visibility: visible !important;">Med Spa Lead-to-Booking System</span>
+                    <span class="nav-brand-text" style="display: block !important; font-weight: 800; font-size: 13px; line-height: 1.2; visibility: visible !important; color: var(--text-dark);">Med Spa Lead-to-Booking System</span>
                     <div style="display: flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 700; color: #22c55e; margin-top: 2px;">
                         <span class="pulse-dot" style="width: 6px; height: 6px; background: var(--cta-green);"></span> SYSTEM ACTIVE / 99.9% UPTIME
                     </div>
@@ -68,10 +87,9 @@
                         style="width: 6px; height: 6px; background: var(--cta-green); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 8px var(--cta-green);"></span>
                     AUTOMATED LEAD-TO-BOOKING SYSTEM
                 </div>
-                <h1 class="text-superdark">Turn Every Med Spa Inquiry Into a<br>Confirmed <span class="text-primary glow-text">Appointment Within Minutes</span></h1>
+                <h1 class="hero-title fade-in visible">Turn Every Med Spa Inquiry Into a <span class="text-blue">Confirmed Appointment</span> Within Minutes</h1>
+                <p class="hero-subtitle fade-in visible" style="transition-delay: 0.1s;">Stop losing patients to competitors while your front desk is busy. Our AI system qualifies and books leads 24/7 with zero human effort.</p>
                 
-                <!-- Inner Spacing Standard (Heading -> Subtext: 16-20px) -->
-                <p class="subtitle text-light" style="font-size: 18px; margin-top: 18px; margin-bottom: 28px;">Every new inquiry is captured, qualified, and guided to booking instantly, so no high-intent patient is lost due to slow follow-up.</p>
                 <div class="cta-wrapper mb-5">
                     <a href="#demo-form" class="btn btn-primary btn-large shadow-lg">See How Your Lead-to-Booking System Would Work</a>
                 </div>
@@ -92,8 +110,8 @@
                         </div>
                         <div style="display:flex; align-items:center; gap:20px;">
                             <div style="text-align:right;">
-                                <div style="font-size: 9px; color: rgba(255,255,255,0.4);">UPTIME</div>
-                                <div style="font-size: 11px; color: var(--cta-green); font-weight: 800;">99.98%</div>
+                                <div style="font-size: 9px; color: rgba(255,255,255,0.4);">LIVE_VETTING</div>
+                                <div style="font-size: 11px; color: var(--cta-green); font-weight: 800;">14 ACTIVE LEADS</div>
                             </div>
                         </div>
                     </div>
@@ -152,11 +170,9 @@
     <!-- SECTION 2 - THE PROBLEM (FAILURE DASHBOARD) -->
     <section class="section bg-light-gray" id="problem" style="border-top: 1px solid var(--border-color); padding: 60px 0;">
         <div class="container fade-in text-center-mobile">
-            <div class="text-center-mobile container-narrow">
-                <div style="color: #DC2626; font-size: 11px; font-weight: 800; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase;">THE HIDDEN COST OF SLOW FOLLOW-UP</div>
-                <h2 style="font-size: 32px; margin-bottom: 18px;">Your Leads Are Ready to Book. Your System Is Not.</h2>
-                <p style="font-size: 16px; margin-bottom: 12px; color: var(--text-dark); font-weight: 500;">Patients are reaching out with intent, but delayed responses and manual handling are costing you bookings every day.</p>
-                <p style="font-size: 16px; margin-bottom: 0; opacity: 0.8;">When a lead waits, they don’t wait for you. They book somewhere else.</p>
+            <div class="text-center mb-5 fade-in">
+                <h2 style="font-size: 38px; margin-bottom: 20px;">The Hidden Toll of Manual Follow-Up</h2>
+                <p style="font-size: 18px; color: var(--text-light); max-width: 800px; margin: 0 auto;">Front-desk fatigue and no-show anxiety are signs of a leaking system. Most clinics lose 40% of their revenue simply because they can't call back within the first 5 minutes.</p>
             </div>
             
             <!-- Failure Dashboard Mockup -->
@@ -227,16 +243,16 @@
             <!-- Operational Toll Indicators -->
             <div class="grid-res-3 mt-4" style="margin-top: 32px;">
                 <div style="border-left: 2px solid #FECACA; padding-left: 16px;">
-                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Staff Burnout</div>
-                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">18% typical churn rate due to manual task exhaustion.</p>
+                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Front-Desk Fatigue</div>
+                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">18% typical staff turnover due to manual lead-chasing exhaustion.</p>
                 </div>
                 <div style="border-left: 2px solid #FECACA; padding-left: 16px;">
-                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Delayed Follow-up</div>
-                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">85% of leads bounce if not contacted in 5 minutes.</p>
+                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">No-Show Anxiety</div>
+                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">85% of leads bounce if not engaged within the first 5 minutes of intent.</p>
                 </div>
                 <div style="border-left: 2px solid #FECACA; padding-left: 16px;">
-                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Brand Decay</div>
-                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">Manual responses average 2+ errors per interaction.</p>
+                    <div style="font-weight: 800; font-size: 12px; color: #991B1B; margin-bottom: 4px;">Revenue Leakage</div>
+                    <p style="font-size: 13px; color: #7F1D1D; margin: 0;">Manual response delays average $8k+ in lost treatment value per month.</p>
                 </div>
             </div>
         </div>
@@ -250,25 +266,71 @@
                 <p style="font-weight: 600;">Speed is no longer an advantage. It is the baseline.</p>
             </div>
             
+            <!-- Visual Comparison Engine (Simulation) -->
+            <div class="engine-sim" style="max-width: 800px; margin: 0 auto 60px;">
+                <!-- Row 1: Manual -->
+                <div style="display: grid; grid-template-columns: 120px 1fr 120px; align-items: center; gap: 24px; margin-bottom: 50px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #EF4444; text-transform: uppercase; letter-spacing: 1px;">Manual Work</div>
+                    <div style="height: 70px; background: rgba(255,255,255,0.03); border-radius: 12px; position: relative; overflow: hidden; border: 1px dashed rgba(239, 68, 68, 0.3);">
+                        <!-- Manual Leads -->
+                        <div class="manual-lead" style="position: absolute; top: 25px; left: 10px; width: 10px; height: 10px; background: #94A3B8; border-radius: 50%;"></div>
+                        <div class="manual-lead" style="position: absolute; top: 35px; left: 10px; width: 10px; height: 10px; background: #94A3B8; border-radius: 50%; animation-delay: 2s;"></div>
+                        
+                        <!-- Staff Bottleneck -->
+                        <div style="position: absolute; left: 140px; top: 12px; text-align: center;">
+                            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 6px 12px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" class="staff-icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <div style="font-size: 8px; color: #EF4444; margin-top: 4px; font-weight: 800;">BUSY STAFF</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-size: 11px; font-weight: 800; color: #EF4444; opacity: 0.6; text-align: right;">LEADS LOST</div>
+                </div>
+
+                <!-- Row 2: Automated -->
+                <div style="display: grid; grid-template-columns: 120px 1fr 120px; align-items: center; gap: 24px;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--cta-green); text-transform: uppercase; letter-spacing: 1px;">Automated</div>
+                    <div style="height: 70px; background: rgba(34, 197, 94, 0.08); border-radius: 12px; position: relative; overflow: hidden; border: 1px solid rgba(34, 197, 94, 0.3);">
+                        <!-- High Speed Leads -->
+                        <div class="auto-lead" style="position: absolute; top: 30px; left: 10px; width: 12px; height: 12px; background: var(--cta-green); border-radius: 50%; box-shadow: 0 0 15px var(--cta-green);"></div>
+                        <div class="auto-lead" style="position: absolute; top: 30px; left: 10px; width: 12px; height: 12px; background: var(--cta-green); border-radius: 50%; box-shadow: 0 0 15px var(--cta-green); animation-delay: 0.7s;"></div>
+                        
+                        <!-- AI Engine -->
+                        <div style="position: absolute; left: 160px; top: 15px; text-align: center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cta-green)" stroke-width="1.5" class="ai-processor">
+                                <rect x="2" y="2" width="20" height="20" rx="4" ry="4"></rect>
+                                <path d="M7 12h10M12 7v10"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--cta-green); text-align: right;">BOOKING SET</div>
+                </div>
+            
             <div class="comparison-grid grid-res-2">
-                <div class="sys-ui-window" style="padding: 32px; opacity: 0.6; border-color: rgba(255,255,255,0.1);">
+                <!-- Manual Side -->
+                <div class="sys-ui-window" style="padding: 40px; opacity: 0.6; border: 1px solid rgba(255,255,255,0.1); background: rgba(220, 38, 38, 0.02); position: relative; overflow: hidden;">
                     <div class="corner-tl"></div><div class="corner-tr"></div>
-                    <div style="font-weight: 800; font-size: 14px; color: #EF4444; margin-bottom: 24px; text-transform: uppercase;">Manual Agency / In-House</div>
-                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; font-size: 14px; color: rgba(255,255,255,0.5);">
-                        <li>✕ Delayed response from 15 minutes to hours</li>
-                        <li>✕ Inconsistent qualification</li>
-                        <li>✕ Fragmented tracking</li>
-                        <li>✕ High lead drop-off</li>
+                    <div style="font-weight: 800; font-size: 14px; color: #EF4444; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px;">Manual Agency / In-House</div>
+                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; font-size: 15px; color: rgba(255,255,255,0.6);">
+                        <li style="display:flex; align-items:center; gap:12px;"><span style="opacity:0.5;">✕</span> Delayed response from 15 mins to hours</li>
+                        <li style="display:flex; align-items:center; gap:12px;"><span style="opacity:0.5;">✕</span> Inconsistent qualification</li>
+                        <li style="display:flex; align-items:center; gap:12px;"><span style="opacity:0.5;">✕</span> Fragmented tracking</li>
+                        <li style="display:flex; align-items:center; gap:12px;"><span style="opacity:0.5;">✕</span> High lead drop-off</li>
                     </ul>
                 </div>
-                <div class="sys-ui-window" style="padding: 32px; border-color: var(--cta-green);">
+                <!-- Automated Side -->
+                <div class="sys-ui-window" style="padding: 40px; border: 2px solid var(--cta-green); background: rgba(34, 197, 94, 0.05); position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(34, 197, 94, 0.1);">
                     <div class="corner-tl"></div><div class="corner-tr"></div>
-                    <div style="font-weight: 800; font-size: 14px; color: var(--cta-green); margin-bottom: 24px; text-transform: uppercase;">Med Spa Lead-to-Booking System (Autonomous)</div>
-                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; font-size: 14px; color: white;">
-                        <li>✓ Instant response under 5 seconds</li>
-                        <li>✓ Accurate qualification</li>
-                        <li>✓ Centralized visibility</li>
-                        <li>✓ Maximum conversion from every lead</li>
+                    <div style="font-weight: 800; font-size: 14px; color: var(--cta-green); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px;">Med Spa Lead-to-Booking System (Autonomous)</div>
+                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; font-size: 15px; color: white; font-weight: 600;">
+                        <li style="display:flex; align-items:center; gap:12px;">✓ Instant response under 5 seconds</li>
+                        <li style="display:flex; align-items:center; gap:12px;">✓ Accurate qualification</li>
+                        <li style="display:flex; align-items:center; gap:12px;">✓ Centralized visibility</li>
+                        <li style="display:flex; align-items:center; gap:12px;">✓ Maximum conversion from every lead</li>
                     </ul>
                 </div>
             </div>
@@ -321,23 +383,23 @@
                         </div>
                     </div>
                     
-                    <div class="sys-line" style="background: rgba(255,255,255,0.1); left: 72px;"></div>
-                    <div class="sys-line-track" id="diagramLine" style="background: var(--cta-green); left: 72px;"></div>
-
-                    <!-- Flowing Data Packets -->
-                    <div id="dataPacket" style="position: absolute; left: 66px; width: 14px; height: 14px; background: var(--cta-green); border-radius: 50%; box-shadow: 0 0 15px var(--cta-green); z-index: 10; display: flex; align-items: center; justify-content: center; font-size: 6px; font-weight: 800; color: white;">DATA</div>
-                    
-                    <div class="sys-node" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); width: 100%;">
-                        <div class="sys-icon" style="background: rgba(255,255,255,0.1); color: var(--cta-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
-                        <div class="font-bold text-white">Revenue Entry</div>
-                    </div>
-                    <div class="sys-node" style="margin-left: 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); width: calc(100% - 20px);">
-                        <div class="sys-icon" style="background: rgba(255,255,255,0.1); color: var(--secondary-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
-                        <div class="font-bold text-white">Booking Engine</div>
-                    </div>
-                    <div class="sys-node" style="margin-left: 40px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); width: calc(100% - 40px);">
-                        <div class="sys-icon" style="background: rgba(34, 197, 94, 0.2); color: var(--cta-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
-                        <div class="font-bold text-green">Deployment Verified</div>
+                    <!-- Simplified Process Flow Visual -->
+                    <div class="sys-data-arch" style="display: flex; flex-direction: column; gap: 24px; position: relative;">
+                        <!-- Connector Line -->
+                        <div style="position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; background: linear-gradient(to bottom, var(--secondary-blue), var(--cta-green)); opacity: 0.3; z-index: 0;"></div>
+                        
+                        <div class="sys-node" style="z-index: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); width: 100%;">
+                            <div class="sys-icon" style="background: rgba(59, 130, 246, 0.2); color: var(--secondary-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                            <div class="font-bold text-white">Lead Enters</div>
+                        </div>
+                        <div class="sys-node" style="z-index: 1; margin-left: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); width: calc(100% - 10px);">
+                            <div class="sys-icon" style="background: rgba(255,255,255,0.1); color: var(--secondary-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg></div>
+                            <div class="font-bold text-white">AI Qualifies</div>
+                        </div>
+                        <div class="sys-node" style="z-index: 1; margin-left: 20px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); width: calc(100% - 20px);">
+                            <div class="sys-icon" style="background: rgba(34, 197, 94, 0.2); color: var(--cta-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M9 16l2 2 4-4"></path></svg></div>
+                            <div class="font-bold text-green" style="color: var(--cta-green);">Booking Set</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -443,77 +505,175 @@
     <!-- SECTION 5 - SYSTEM OUTCOMES (PERFORMANCE SUITE) -->
     <section class="section bg-light-gray" id="results" style="padding-top: 100px;">
         <div class="container fade-in text-center-mobile">
-            <div class="text-center-mobile container-narrow" style="margin-bottom: 48px;">
-                <h2 style="font-size: 38px; margin-bottom: 18px;">Measured Business Outcomes Not Just Features</h2>
-                <p style="font-size: 16px; color: var(--text-light); font-weight: 500;">When response speed and follow-up are automated, your entire pipeline performs more efficiently and predictably.</p>
+            <div class="text-center mb-5">
+                <h2 style="font-size: 38px; margin-bottom: 20px;">System Performance Benchmarks</h2>
+                <p style="font-size: 18px; color: var(--text-light); max-width: 800px; margin: 0 auto;">Based on system architecture testing and industry response metrics. These are the projected outcomes for clinics implementing the automated protocol.</p>
             </div>
             
             <div class="outcomes-grid grid-res-4" style="margin-top: 60px;">
-                
-                <!-- Card 1 -->
-                <div class="outcome-card shadow-soft" id="out-card-1" style="background: white; border-radius: 20px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.5s var(--cubic-bounce);">
-                    <div style="background: var(--sys-dark-bg); width: 100%; height: 160px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,0.05);">
-                        <!-- Mini HUD SMS Visual -->
-                        <div style="width: 80px; height: 100px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); padding: 12px; position: relative;">
-                            <div style="width: 100%; height: 2px; background: var(--secondary-blue); border-radius: 4px; margin-bottom: 8px;"></div>
-                            <div style="width: 70%; height: 2px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: 8px;"></div>
-                            <div style="width: 90%; height: 2px; background: var(--secondary-blue); border-radius: 4px;"></div>
-                            <div style="position:absolute; bottom:12px; right:12px; width:12px; height:12px; background:var(--cta-green); border-radius:50%; animation: pulseNode 2s infinite;"></div>
-                        </div>
+                <!-- Tile 1 -->
+                <div class="sys-ui-window" style="padding: 32px; background: var(--bg-white); border-bottom: 4px solid var(--secondary-blue);">
+                    <div style="font-size: 32px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">85%</div>
+                    <div style="font-size: 12px; font-weight: 800; color: var(--secondary-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Conversion Lift</div>
+                    <p style="font-size: 14px; color: var(--text-light); line-height: 1.5;">Average increase in booking rates within 30 days of deployment.</p>
+                </div>
+                <!-- Tile 2 -->
+                <div class="sys-ui-window" style="padding: 32px; background: var(--bg-white); border-bottom: 4px solid var(--cta-green);">
+                    <div style="font-size: 32px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">&lt; 5s</div>
+                    <div style="font-size: 12px; font-weight: 800; color: var(--cta-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Response Speed</div>
+                    <p style="font-size: 14px; color: var(--text-light); line-height: 1.5;">Leads are contacted before they can browse a competitor's site.</p>
+                </div>
+                <!-- Tile 3 -->
+                <div class="sys-ui-window" style="padding: 32px; background: var(--bg-white); border-bottom: 4px solid var(--primary-blue);">
+                    <div style="font-size: 32px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">24/7</div>
+                    <div style="font-size: 12px; font-weight: 800; color: var(--primary-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Active Duty</div>
+                    <p style="font-size: 14px; color: var(--text-light); line-height: 1.5;">Never miss a lead on weekends, holidays, or after business hours.</p>
+                </div>
+                <!-- Tile 4 -->
+                <div class="sys-ui-window" style="padding: 32px; background: var(--bg-white); border-bottom: 4px solid #F59E0B;">
+                    <div style="font-size: 32px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Zero</div>
+                    <div style="font-size: 12px; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Staff Friction</div>
+                    <p style="font-size: 14px; color: var(--text-light); line-height: 1.5;">Automates the "grind" of follow-up so your team can focus on patients.</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5.5 - OPERATIONAL SUCCESS SCENARIOS -->
+    <section class="section bg-white" style="padding-top: 80px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="font-size: 32px; margin-bottom: 12px; color: var(--text-dark);">Operational Success Scenarios</h2>
+                <p style="color: var(--text-muted);">Visualizing the difference between manual friction and automated continuity.</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
+                <!-- Scenario 1 -->
+                <div class="sys-ui-window shadow-soft" style="padding: 32px; flex: 1; min-width: 300px; max-width: 380px;">
+                    <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 8px 16px; border-radius: 100px; display: inline-block; font-size: 10px; font-weight: 800; color: #DC2626; margin-bottom: 16px; letter-spacing: 1px;">SCENARIO_A: MANUAL_FRICTION</div>
+                    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px; color: var(--text-light);">"A lead submits a form at 7:30 PM. The front desk is closed. By 9 AM the next morning, that lead has already booked with a competitor who used an instant automated system."</p>
+                    <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-light); padding-top: 16px;">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-dark);">Manual Risk:</div>
+                        <div style="font-size: 13px; color: #DC2626; font-weight: 700;">Revenue Leakage Detected</div>
                     </div>
-                    <div style="font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Speed-to-Lead</div>
-                    <p style="font-size: 13px; color: var(--text-light); margin-bottom: 0;">Engage patients at peak intent.</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="outcome-card shadow-soft" id="out-card-2" style="background: white; border-radius: 20px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.5s var(--cubic-bounce);">
-                    <div style="background: var(--sys-dark-bg); width: 100%; height: 160px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: flex-end; justify-content: center; gap: 8px; padding-bottom: 24px; border: 1px solid rgba(255,255,255,0.05);">
-                        <!-- Mini HUD Chart -->
-                        <div style="width: 12px; height: 30px; background: rgba(59,130,246,0.2); border-radius: 3px;"></div>
-                        <div style="width: 12px; height: 60px; background: rgba(59,130,246,0.4); border-radius: 3px;"></div>
-                        <div style="width: 12px; height: 90px; background: var(--cta-green); border-radius: 3px; animation: growBar 3s infinite;"></div>
+                <!-- Scenario 2 -->
+                <div class="sys-ui-window shadow-soft" style="padding: 32px; flex: 1; min-width: 300px; max-width: 380px;">
+                    <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid var(--secondary-blue); padding: 8px 16px; border-radius: 100px; display: inline-block; font-size: 10px; font-weight: 800; color: var(--secondary-blue); margin-bottom: 16px; letter-spacing: 1px;">SCENARIO_B: STAFF_BURNOUT</div>
+                    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px; color: var(--text-light);">"Staff spends 4 hours daily manually chasing old leads. Important inquiries get buried in the noise, leading to high stress, employee turnover, and lost high-value patients."</p>
+                    <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-light); padding-top: 16px;">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-dark);">Manual Risk:</div>
+                        <div style="font-size: 13px; color: var(--secondary-blue); font-weight: 700;">Operational Inefficiency</div>
                     </div>
-                    <div style="font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Recover Lost Revenue Automatically</div>
-                    <p style="font-size: 13px; color: var(--text-light); margin-bottom: 0;">Convert missed opportunities into bookings.</p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="outcome-card shadow-soft" id="out-card-3" style="background: white; border-radius: 20px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.5s var(--cubic-bounce);">
-                    <div style="background: var(--sys-dark-bg); width: 100%; height: 160px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05);">
-                        <!-- Mini HUD Calendar -->
-                        <div style="width: 100px; height: 80px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); padding: 12px;">
-                            <div style="display:flex; gap:4px; margin-bottom:12px;">
-                                <div style="width:8px; height:8px; background:rgba(255,255,255,0.1); border-radius:2px;"></div>
-                                <div style="width:8px; height:8px; background:var(--cta-green); border-radius:2px; box-shadow:0 0 10px var(--cta-green);"></div>
-                                <div style="width:8px; height:8px; background:rgba(255,255,255,0.1); border-radius:2px;"></div>
-                            </div>
-                            <div style="width:100%; height:30px; background:rgba(59,130,246,0.1); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:800;">APPT_SET</div>
-                        </div>
+                <!-- Scenario 3 -->
+                <div class="sys-ui-window shadow-soft" style="padding: 32px; flex: 1; min-width: 300px; max-width: 380px; background: #020617; border: 2px solid var(--cta-green); color: white;">
+                    <div style="background: rgba(34, 197, 94, 0.2); border: 1px solid var(--cta-green); padding: 8px 16px; border-radius: 100px; display: inline-block; font-size: 10px; font-weight: 800; color: var(--cta-green); margin-bottom: 16px; letter-spacing: 1px;">SCENARIO_C: SYSTEM_PRECISION</div>
+                    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px; color: #E2E8F0;">"A lead submits at 7:30 PM. The system instantly qualifies them via WhatsApp. Appointment confirmed and synced to the clinic calendar by 7:32 PM. Revenue secured."</p>
+                    <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+                        <div style="font-weight: 700; font-size: 13px; color: white;">System Outcome:</div>
+                        <div style="font-size: 13px; color: var(--cta-green); font-weight: 700;">100% Autonomous Booking</div>
                     </div>
-                    <div style="font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Reduced No-Shows</div>
-                    <p style="font-size: 13px; color: var(--text-light); margin-bottom: 0;">Automated reminders improve attendance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5.6 - TESTIMONIALS (BETA PROGRAM) -->
+    <section class="section bg-light-gray" id="testimonials" style="padding-top: 80px; padding-bottom: 100px; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="font-size: 32px; margin-bottom: 12px; color: var(--text-dark);">Client Success Protocols</h2>
+                <div style="display: inline-block; background: var(--secondary-blue); color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 800; letter-spacing: 1px;">[ BETA_PHASE_ACTIVE ]</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                <!-- Invitation Card -->
+                <div class="sys-ui-window shadow-lg" style="padding: 40px; background: linear-gradient(135deg, #0F172A, #1E293B); border: 2px dashed var(--secondary-blue); text-align: center; grid-column: span 1;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--secondary-blue); margin-bottom: 16px; letter-spacing: 2px;">[ BECOME_CASE_STUDY_01 ]</div>
+                    <h3 style="color: white; font-size: 22px; margin-bottom: 16px;">Shape the Future of Med Spa Automation</h3>
+                    <p style="font-size: 14px; color: #94A3B8; margin-bottom: 24px; line-height: 1.6;">We are selecting 3 high-volume clinics to join our **Founding Partner Program**. Get priority support and zero-cost setup in exchange for a performance review.</p>
+                    <a href="#contact" class="btn btn-primary" style="background: var(--secondary-blue); border: none; color: white; padding: 12px 32px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block;">Apply for Founding Partner Status</a>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="outcome-card shadow-soft" id="out-card-4" style="background: white; border-radius: 20px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.5s var(--cubic-bounce);">
-                    <div style="background: var(--sys-dark-bg); width: 100%; height: 160px; border-radius: 12px; margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(255,255,255,0.05);">
-                        <!-- Mini HUD Rows -->
-                        <div style="width: 120px; height: 14px; background: rgba(255,255,255,0.05); border-radius: 3px; display:flex; align-items:center; padding:0 8px; justify-content:space-between;">
-                            <div style="width:50%; height:2px; background:rgba(255,255,255,0.1); border-radius:2px;"></div>
-                            <div style="width:6px; height:6px; background:var(--secondary-blue); border-radius:50%;"></div>
-                        </div>
-                        <div style="width: 120px; height: 14px; background: rgba(59,130,246,0.1); border-radius: 3px; display:flex; align-items:center; padding:0 8px; justify-content:space-between; border: 1px solid rgba(59,130,246,0.2);">
-                            <div style="width:50%; height:2px; background:white; opacity:0.8; border-radius:2px;"></div>
-                            <div style="width:6px; height:6px; background:var(--cta-green); border-radius:50%;"></div>
-                        </div>
-                        <div style="width: 120px; height: 14px; background: rgba(255,255,255,0.05); border-radius: 3px; display:flex; align-items:center; padding:0 8px; justify-content:space-between;">
-                            <div style="width:50%; height:2px; background:rgba(255,255,255,0.1); border-radius:2px;"></div>
-                            <div style="width:6px; height:6px; background:rgba(255,255,255,0.2); border-radius:50%;"></div>
+                <!-- Blurred Placeholder 1 -->
+                <div class="sys-ui-window" style="padding: 32px; opacity: 0.4; filter: blur(2px); background: white; pointer-events: none;">
+                    <div style="width: 100px; height: 10px; background: #E2E8F0; margin-bottom: 20px;"></div>
+                    <div style="width: 100%; height: 15px; background: #F1F5F9; margin-bottom: 10px;"></div>
+                    <div style="width: 90%; height: 15px; background: #F1F5F9; margin-bottom: 30px;"></div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; background: #F1F5F9; border-radius: 50%;"></div>
+                        <div style="width: 80px; height: 10px; background: #F1F5F9;"></div>
+                    </div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 800; color: var(--text-dark); font-size: 12px; letter-spacing: 1px; white-space: nowrap;">[ DATA_PROCESSING_24% ]</div>
+                </div>
+
+                <!-- Blurred Placeholder 2 -->
+                <div class="sys-ui-window" style="padding: 32px; opacity: 0.4; filter: blur(2px); background: white; pointer-events: none;">
+                    <div style="width: 100px; height: 10px; background: #E2E8F0; margin-bottom: 20px;"></div>
+                    <div style="width: 100%; height: 15px; background: #F1F5F9; margin-bottom: 10px;"></div>
+                    <div style="width: 85%; height: 15px; background: #F1F5F9; margin-bottom: 30px;"></div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; background: #F1F5F9; border-radius: 50%;"></div>
+                        <div style="width: 80px; height: 10px; background: #F1F5F9;"></div>
+                    </div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 800; color: var(--text-dark); font-size: 12px; letter-spacing: 1px; white-space: nowrap;">[ AWAITING_DEPLOYMENT ]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6.5 - SYSTEM FAQ (OBJECTION HANDLING) -->
+    <section class="section bg-light-gray" style="padding-top: 100px; padding-bottom: 100px; border-top: 1px solid var(--border-color);">
+        <div class="container container-narrow fade-in">
+            <div class="text-center mb-5">
+                <h2 style="font-size: 36px; margin-bottom: 18px;">Common System Inquiries</h2>
+                <p style="font-size: 16px; color: var(--text-light);">Addressing the technical and operational requirements for your deployment.</p>
+            </div>
+            
+            <div class="faq-container" style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px;">
+                <!-- FAQ 1 -->
+                <div class="faq-item" style="border-radius: 12px; overflow: hidden;">
+                    <button class="faq-trigger" style="width: 100%; padding: 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left;">
+                        <span style="font-weight: 700; font-size: 16px;">Will this replace my front desk staff?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.3s ease;"><path d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 0 24px 24px 24px; font-size: 15px; line-height: 1.6;">
+                            No. It empowers them. By automating the repetitive "chasing" of cold leads, your staff can focus on providing elite care to the patients who are already in your clinic.
                         </div>
                     </div>
-                    <div style="font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Full Visibility</div>
-                    <p style="font-size: 13px; color: var(--text-light); margin-bottom: 0;">Track leads and conversions without manual tracking.</p>
                 </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item" style="border-radius: 12px; overflow: hidden;">
+                    <button class="faq-trigger" style="width: 100%; padding: 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left;">
+                        <span style="font-weight: 700; font-size: 16px;">How long does deployment take?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.3s ease;"><path d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 0 24px 24px 24px; font-size: 15px; line-height: 1.6;">
+                            Typically 3-5 business days. We map your current patient journey, integrate your calendar, and activate the AI protocols with zero downtime for your clinic.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item" style="border-radius: 12px; overflow: hidden;">
+                    <button class="faq-trigger" style="width: 100%; padding: 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left;">
+                        <span style="font-weight: 700; font-size: 16px;">Does this work with my specific CRM?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.3s ease;"><path d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 0 24px 24px 24px; font-size: 15px; line-height: 1.6;">
+                            Yes. We integrate with all major Med Spa platforms including Mindbody, Zenoti, Boulevard, and Jane App. If it has a calendar, we can sync with it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
             </div>
         </div>
@@ -635,29 +795,63 @@
                 <div class="form-right" style="padding:48px;">
                     <form id="bookingForm" class="structured-form">
                         <div class="form-group">
-                            <label class="form-label" for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                            <label class="form-label" for="full_name">Full Name <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
+                            <input type="text" id="full_name" name="full_name" required placeholder="Jane Doe">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
+                            <label class="form-label" for="email">Email <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
                             <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="budget">Budget <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
+                            <select id="budget" name="budget" required style="cursor: pointer;">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Under $500">Under $500</option>
+                                <option value="$500 – $1500">$500 – $1500</option>
+                                <option value="$1500 – $3000">$1500 – $3000</option>
+                                <option value="$3000+">$3000+</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="phone">Phone Number <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Optional – helps us respond faster via call or WhatsApp)</span></label>
                             <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
                         </div>
                         <div class="form-group" style="margin-bottom: 24px;">
-                            <label class="form-label" for="msg">Message <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Optional - tell us your focus)</span></label>
-                            <textarea id="msg" name="msg" rows="2" placeholder="Tell us about your clinic..."></textarea>
+                            <label class="form-label" for="message">Message / "What are you looking for?" <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Optional)</span></label>
+                            <textarea id="message" name="message" rows="2" placeholder="Tell us about your clinic..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-massive shadow-lg mt-2" style="width:100%; font-size:18px;">See My System Plan</button>
                         
+                        <!-- Integration Trust Bar -->
+                        <div style="margin-top: 24px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Compatible With Your Stack</div>
+                            <div style="display: flex; justify-content: center; gap: 20px; opacity: 0.6; filter: grayscale(1);">
+                                <div style="font-weight: 900; color: #111827; font-size: 14px;">MINDBODY</div>
+                                <div style="font-weight: 900; color: #111827; font-size: 14px;">ZENOTI</div>
+                                <div style="font-weight: 900; color: #111827; font-size: 14px;">BOULEVARD</div>
+                                <div style="font-weight: 900; color: #111827; font-size: 14px;">JANE</div>
+                            </div>
+                        </div>
+
                         <div class="text-center mt-3" style="font-size: 13px; color: var(--text-light); display:flex; align-items:center; justify-content:center; gap:6px;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No spam. No pressure. Just a clear system walkthrough.
                         </div>
                         <div id="formMessage" class="form-message" style="display:none;"></div>
                     </form>
                 </div>
+                
+                <!-- Trust Badge Row -->
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; gap: 24px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">HIPAA Compliant</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Staff Friendly</span>
+                    </div>
+                </div>
+            </div>
                 
             </div>
         </div>
@@ -680,13 +874,13 @@
                 <!-- Brand Status -->
                 <div>
                     <div style="display:flex; align-items:center; gap:12px; margin-bottom: 20px;">
-                        <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo">
-                        <span class="brand-name">Med Spa Lead-to-Booking System</span>
+                        <img src="assets/logo.png" class="brand-logo" alt="Med Spa Lead-to-Booking System Logo" loading="lazy">
+                        <span class="brand-name" style="color: var(--text-dark);">Med Spa Lead-to-Booking System</span>
                     </div>
                     <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 100px; padding: 6px 16px; display: inline-flex; align-items:center; gap:8px; font-size: 12px; color: var(--cta-green);">
                         <span class="pulse-dot" style="background: var(--cta-green); width: 8px; height: 8px;"></span> Live System v4.2.1-stable
                     </div>
-                    <div style="margin-top: 12px; font-size: 11px; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: 6px;">
+                    <div style="margin-top: 12px; font-size: 11px; color: var(--text-light); display: flex; align-items: center; gap: 6px;">
                         <span style="width: 6px; height: 6px; background: var(--secondary-blue); border-radius: 50%; animation: pulseNode 3s infinite;"></span> AI Patient Liaison: ACTIVE
                     </div>
                 </div>
@@ -695,10 +889,10 @@
                 <div>
                     <div style="font-size: 14px; font-weight: 800; color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Infrastructure Status</div>
                     <div class="grid-res-2" style="gap: 12px; max-width: 300px; margin: 0 auto;">
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> US-AST: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> UK-SOUTH: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> EU-CEN: UP</div>
-                        <div style="font-size: 12px; color: rgba(255,255,255,0.6); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--secondary-blue);"></span> API: STABLE</div>
+                        <div style="font-size: 12px; color: var(--text-light); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> US-AST: UP</div>
+                        <div style="font-size: 12px; color: var(--text-light); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> UK-SOUTH: UP</div>
+                        <div style="font-size: 12px; color: var(--text-light); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--cta-green);"></span> EU-CEN: UP</div>
+                        <div style="font-size: 12px; color: var(--text-light); display:flex; align-items:center; gap:8px; justify-content: center;"><span style="width:6px; height:6px; border-radius:50%; background:var(--secondary-blue);"></span> API: STABLE</div>
                     </div>
                 </div>
 
@@ -706,14 +900,14 @@
                 <div>
                     <div style="font-size: 14px; font-weight: 800; color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">System Health</div>
                     <div style="font-size: 24px; font-weight: 800; color: var(--cta-green);" id="statusIndicator">99.98% Uptime</div>
-                    <div style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px;">Live Global Node Status: NOMINAL</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Live Global Node Status: NOMINAL</div>
                 </div>
 
                 <!-- Quick Access -->
                 <div>
                     <div style="font-size: 14px; font-weight: 800; color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Admin Console</div>
-                    <a href="#demo-form" style="display:block; color:rgba(255,255,255,0.5); font-size:14px; margin-bottom:10px; text-decoration:none;">System Status</a>
-                    <a href="#demo-form" style="display:block; color:rgba(255,255,255,0.5); font-size:14px; text-decoration:none;">Partner Integration</a>
+                    <a href="#demo-form" style="display:block; color: var(--text-light); font-size:14px; margin-bottom:10px; text-decoration:none;">System Status</a>
+                    <a href="#demo-form" style="display:block; color: var(--text-light); font-size:14px; text-decoration:none;">Partner Integration</a>
                 </div>
             </div>
 
@@ -750,20 +944,30 @@
                 
                 <form id="modalForm" class="structured-form">
                     <div class="form-group">
-                        <label class="form-label" for="modalName">Full Name</label>
-                        <input type="text" id="modalName" name="fullName" required placeholder="Jane Doe">
+                        <label class="form-label" for="modalName">Full Name <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
+                        <input type="text" id="modalName" name="full_name" required placeholder="Jane Doe">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="modalEmail">Email</label>
+                        <label class="form-label" for="modalEmail">Email <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
                         <input type="email" id="modalEmail" name="email" required placeholder="jane@example.com">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="modalPhone">Phone Number</label>
+                        <label class="form-label" for="modalBudget">Budget <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Required)</span></label>
+                        <select id="modalBudget" name="budget" required style="cursor: pointer;">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Under $500">Under $500</option>
+                            <option value="$500 – $1500">$500 – $1500</option>
+                            <option value="$1500 – $3000">$1500 – $3000</option>
+                            <option value="$3000+">$3000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalPhone">Phone Number <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Optional)</span></label>
                         <input type="tel" id="modalPhone" name="phone" placeholder="(555) 123-4567">
                     </div>
                     <div class="form-group" style="margin-bottom: 24px;">
-                        <label class="form-label" for="modalMsg">Requirement / Notes</label>
-                        <textarea id="modalMsg" name="msg" rows="3" placeholder="Tell us about your clinic..."></textarea>
+                        <label class="form-label" for="modalMessage">Message / "What are you looking for?" <span style="font-weight:400; font-size:12px; color:var(--text-muted);">(Optional)</span></label>
+                        <textarea id="modalMessage" name="message" rows="3" placeholder="Tell us about your clinic..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-massive shadow-lg" style="width:100%; font-size:18px;">See My System Plan</button>
                 </form>
@@ -772,8 +976,16 @@
     </div>
 
     <script src="script.js"></script>
-    <!-- Zapier Chatbot Protocol -->
-    <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmnsja83u004e9eg05ka2matl'></zapier-interfaces-chatbot-embed>
-</body>
+    <!-- Premium WhatsApp Direct Line -->
+    <a href="https://wa.me/919756954125?text=I'm%20interested%20in%20the%20Med%20Spa%20Lead-to-Booking%20System.%20Please%20send%20me%20the%20automation%20walkthrough." 
+       class="whatsapp-system-btn" 
+       target="_blank" 
+       aria-label="Chat with a System Specialist">
+        <div class="wa-status-ping"></div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.067 2.877 1.215 3.076.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span>Chat with a Specialist</span>
+    </a></body>
 
 </html>
