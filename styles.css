@@ -33,11 +33,14 @@ body.dark-theme {
     --text-dark: #F8FAFC;
     --text-light: #94A3B8;
     --text-muted: #64748B;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-light: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --border-light: rgba(255, 255, 255, 0.08);
     --sys-dark-bg: #010413;
     --primary-blue: #3B82F6;
-    --primary-dark: #1D4ED8;
+    --primary-dark: #60A5FA;
+    --text-dark: #FFFFFF;
+    --text-light: #CBD5E1;
+    --text-muted: #94A3B8;
 }
 
 body {
@@ -79,6 +82,25 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
     0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
     70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
     100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shake-slow {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.spin-slow { animation: spin-slow 8s linear infinite; }
+.shake-slow { animation: shake-slow 4s ease-in-out infinite; }
+
+.outcome-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 @keyframes subtleBreath {
     0%, 100% { transform: scale(1); }
@@ -164,7 +186,7 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 .site-header { padding: 16px 24px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all 0.3s ease; background: transparent; }
 .site-header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-light); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-bottom: 1px solid rgba(255,255,255,0.05); }
-.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1150px; margin: 0 auto; }
+.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; width: 100%; }
 .header-brand { display: flex; align-items: center; gap: 12px; }
 .brand-logo { width: 38px; height: 38px; border-radius: 8px; box-shadow: 0 4px 10px rgba(11, 61, 145, 0.2); }
 .brand-name { font-weight: 700; font-size: 20px; color: var(--primary-dark); letter-spacing: -0.5px; }
@@ -245,12 +267,19 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
 
 /* Base Layout */
 .section { padding: var(--section-padding) 24px; position: relative; }
-.container { max-width: 1150px; margin: 0 auto; }
+.container { max-width: 1300px; margin: 0 auto; width: 100%; }
 .container-narrow { max-width: 800px; margin: 0 auto; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .sys-grid-responsive { display: grid; grid-template-columns: 1fr 220px; transition: all 0.3s ease; }
 
 /* 1. Hero Updates */
+#demo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Grids */
 .bg-dots {
     background-image: radial-gradient(rgba(11, 61, 145, 0.1) 1px, transparent 1px);
@@ -397,8 +426,9 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
 }
 
-.structured-form input, .structured-form textarea { width: 100%; padding: 16px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 15px; color: var(--text-dark); background: var(--bg-light-gray); transition: all 0.2s; font-family: inherit; margin-top: 8px; }
-.structured-form input:focus, .structured-form textarea:focus { outline: none; border-color: var(--secondary-blue); background: white; box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.1); }
+.structured-form input, .structured-form textarea, .structured-form select { width: 100%; padding: 16px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 15px; color: var(--text-dark); background: var(--bg-light-gray); transition: all 0.2s; font-family: inherit; margin-top: 8px; appearance: none; }
+.structured-form input:focus, .structured-form textarea:focus, .structured-form select:focus { outline: none; border-color: var(--secondary-blue); background: white; box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.1); }
+.structured-form select option { background-color: var(--bg-white); color: var(--text-dark); }
 .form-group { margin-bottom: 24px; }
 .form-label { font-weight: 600; font-size: 14px; color: var(--text-dark); display: block; }
 .form-error { color: #DC2626; margin-top: 10px; font-size: 14px; font-weight: 500; }
@@ -514,8 +544,14 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
     .c-row div[style*="font-size: 10px"] { font-size: 9px !important; }
 
     /* Problem Section */
-    .grid-res-leak { grid-template-columns: 1fr !important; }
-    .grid-res-leak > div { border-right: none !important; border-bottom: 1px solid #FECACA; padding: 20px !important; }
+    .grid-res-leak { 
+        display: flex !important;
+        flex-direction: column-reverse !important; 
+        gap: 0 !important;
+    }
+    .grid-res-leak > div:first-child {
+        border-top: 1px solid #FECACA;
+    }
     #leakCounter { font-size: 32px !important; text-align: center; }
     .problem-rows-container { max-width: 100%; }
 
@@ -575,7 +611,25 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; }
 }
 
-/* Modal System Styles */
+/* FAQ & Testimonial Theme Fixes */
+.testimonial-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+.testimonial-text {
+    color: var(--text-light);
+}
+.faq-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+}
+.faq-trigger {
+    color: var(--text-dark);
+}
+.faq-content {
+    color: var(--text-light);
+}
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -586,11 +640,12 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
     backdrop-filter: blur(8px);
     z-index: 9999;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    overflow-y: auto;
 }
 .modal-overlay.active {
     opacity: 1;
@@ -604,6 +659,7 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
     border-radius: var(--border-radius);
     transform: translateY(20px);
     transition: transform 0.4s var(--cubic-bounce);
+    margin: auto;
 }
 .modal-overlay.active .modal-content {
     transform: translateY(0);
@@ -613,28 +669,88 @@ body.dark-theme .site-header.scrolled { background: rgba(2, 6, 23, 0.9); border-
 }
 
 /* Modal Form Overrides */
+.modal-content h3.text-white { color: white !important; }
 .modal-content .form-label { color: rgba(255,255,255,0.6); }
-.modal-content input, .modal-content textarea { 
+.modal-content input, .modal-content textarea, .modal-content select { 
     background: rgba(255,255,255,0.03); 
     border: 1px solid rgba(255,255,255,0.1); 
     color: white; 
 }
-.modal-content input:focus, .modal-content textarea:focus { 
+.modal-content input:focus, .modal-content textarea:focus, .modal-content select:focus { 
     background: rgba(255,255,255,0.05); 
     border-color: var(--secondary-blue); 
 }
+.modal-content select option { 
+    background-color: var(--bg-superdark); 
+    color: white; 
+}
+/* WhatsApp System Button */
+.whatsapp-system-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--bg-superdark);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid var(--secondary-blue);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    z-index: 9999;
+    transition: all 0.3s var(--cubic-bounce);
+}
 
-/* Zapier Chatbot Protocol Polish */
-zapier-interfaces-chatbot-embed {
-    z-index: 9998 !important; /* Just below main modals */
+.whatsapp-system-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: var(--secondary-blue);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+}
+
+.whatsapp-system-btn svg {
+    color: #25D366; /* Standard WA Green for the icon itself */
+}
+
+.whatsapp-system-btn:hover svg {
+    color: white;
+}
+
+.wa-status-ping {
+    width: 8px;
+    height: 8px;
+    background: var(--cta-green);
+    border-radius: 50%;
+    position: relative;
+}
+
+.wa-status-ping::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--cta-green);
+    border-radius: 50%;
+    animation: pulseNode 2s infinite;
 }
 
 @media (max-width: 900px) {
-    zapier-interfaces-chatbot-embed {
-        bottom: 20px !important;
-        right: 15px !important;
-        transform: scale(0.9);
-        transform-origin: bottom right;
+    .whatsapp-system-btn span { display: none; }
+    .whatsapp-system-btn { 
+        padding: 12px; 
+        border-radius: 50%; 
+        bottom: 20px; 
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+    }
+    .wa-status-ping {
+        position: absolute;
+        top: 2px;
+        right: 2px;
     }
 }
 
@@ -679,7 +795,7 @@ body.dark-theme .site-footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 body.dark-theme .brand-name {
-    color: white !important;
+    color: #3C82F6 !important;
 }
 body.dark-theme .nav-brand-text {
     color: #3C82F6 !important;
@@ -694,9 +810,14 @@ body.dark-theme .form-right {
     background: #0B1120;
 }
 body.dark-theme .structured-form input, 
-body.dark-theme .structured-form textarea {
+body.dark-theme .structured-form textarea,
+body.dark-theme .structured-form select {
     background: rgba(2, 6, 23, 0.5);
     border-color: rgba(255,255,255,0.1);
+    color: white;
+}
+body.dark-theme .structured-form select option {
+    background-color: var(--bg-superdark);
     color: white;
 }
 
@@ -762,6 +883,46 @@ body.dark-theme [style*="border: 1px dashed #FECACA"] {
 }
 
 /* Fix for overlapping elements on mobile */
+/* Comparison Engine Simulation */
+@keyframes leadDrop {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { transform: translate(20px, 0); opacity: 1; }
+    80% { transform: translate(60px, 10px); opacity: 1; }
+    100% { transform: translate(80px, 40px); opacity: 0; }
+}
+
+@keyframes leadSuccess {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { transform: translate(10px, 0); opacity: 1; }
+    90% { transform: translate(280px, 0); opacity: 1; }
+    100% { transform: translate(300px, 0); opacity: 0; }
+}
+
+@keyframes staffBurnout {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+@keyframes aiPulse {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.1); filter: brightness(1.5); }
+}
+
+.engine-sim {
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 48px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+}
+
+.manual-lead { animation: leadDrop 4s linear infinite; }
+.auto-lead { animation: leadSuccess 1.5s linear infinite; }
+.staff-icon { animation: staffBurnout 0.5s ease-in-out infinite; }
+.ai-processor { animation: aiPulse 2s ease-in-out infinite; }
+
 @media (max-width: 900px) {
     .site-header .header-container {
         justify-content: flex-end;
