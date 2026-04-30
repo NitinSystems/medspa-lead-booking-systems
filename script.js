@@ -10,7 +10,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURE YOUR WEBHOOK HERE ---
     // Works with Hubspot, Make.com, GoHighLevel, Zapier, etc.
-    const WEBHOOK_URL = 'PASTE_YOUR_WEBHOOK_URL_HERE'; 
+    const WEBHOOK_URL = 'https://hook.eu1.make.com/slclspgnn2u2xebn1eil1046s5zsxddv'; 
 
     console.log("Med Spa Lead-to-Booking System: System Logic Online.");
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('crmBoard')) pipelineObserver.observe(document.getElementById('crmBoard'));
 
     // --- 5. INTAKE HUD REACTIVITY ---
-    const inputName = document.getElementById('fullName');
+    const inputName = document.getElementById('full_name');
     const inputEmail = document.getElementById('email');
     const hudNameLine = document.getElementById('hud-name');
     const hudEmailLine = document.getElementById('hud-email');
@@ -263,7 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const staticForm = document.getElementById('bookingForm');
     
     // Universal trigger for all 'Book a Demo' buttons
-    const ctaButtons = document.querySelectorAll('a[href="#demo-form"], .header-action a, .cta-wrapper a');
+    // We specifically exclude .nav-link to allow smooth scrolling for standard navigation
+    const ctaButtons = document.querySelectorAll('a[href="#demo-form"]:not(.nav-link), .header-action a, .cta-wrapper a');
 
     function openModal(e) {
         if (e) e.preventDefault();
@@ -304,30 +305,38 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerText = "SYNC_IN_PROGRESS...";
         submitBtn.style.opacity = "0.7";
 
+        // Reset any previous errors
+        let errorMsg = form.querySelector('.form-message');
+        if (errorMsg) errorMsg.style.display = 'none';
+
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
         try {
             // WEBHOOK POST REQ
             if (WEBHOOK_URL && !WEBHOOK_URL.includes('PASTE_YOUR_WEBHOOK')) {
+                // Append tracking data
+                data.source_system = form.id === 'modalForm' ? 'MODAL_INTAKE' : 'STATIC_INTAKE';
+                data.timestamp = new Date().toISOString();
+                data.origin = window.location.origin;
+
+                // URL Encode the data to bypass CORS preflight restrictions on Make.com
+                const urlEncodedData = new URLSearchParams(data).toString();
+
                 await fetch(WEBHOOK_URL, {
                     method: 'POST',
-                    mode: 'no-cors', // Standard for automation triggers
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        ...data,
-                        source_system: form.id === 'modalForm' ? 'MODAL_INTAKE' : 'STATIC_INTAKE',
-                        timestamp: new Date().toISOString(),
-                        origin: window.location.origin
-                    })
+                    mode: 'no-cors', // Force opaque request to prevent browser CORS block
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: urlEncodedData
                 });
             }
 
             // REDIRECT TO THANK YOU
             window.location.href = 'thank-you.html';
         } catch (err) {
-            console.error("System handshaking failed:", err);
-            // Fallback redirect for UX stability
+            console.error("System handshaking failed (often blocked by adblockers or local file testing):", err);
+            
+            // Fallback: Always redirect to the Thank You page so the user can still book the Calendly call
             window.location.href = 'thank-you.html';
         }
     }
@@ -350,6 +359,28 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => themeToggle.style.transform = 'scale(1)', 200);
         });
     }
+
+    // --- FAQ ACCORDION LOGIC ---
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+    faqTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const faqItem = trigger.closest('.faq-item');
+            const content = faqItem.querySelector('.faq-content');
+            const icon = trigger.querySelector('.faq-icon');
+            
+            // Toggle active state
+            const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+            
+            // Close all others
+            document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
+            document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+            
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
 
     console.log("Med Spa Lead-to-Booking System: All Intake Protocols Synced.");
 });
